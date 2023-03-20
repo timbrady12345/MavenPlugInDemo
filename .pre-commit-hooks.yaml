@@ -1,6 +1,6 @@
 -   id: no-commit-to-branch
     name: "don't commit to branch"
     entry: no-commit-to-branch
-    language: python
+    language: java
     pass_filenames: false
     always_run: true
