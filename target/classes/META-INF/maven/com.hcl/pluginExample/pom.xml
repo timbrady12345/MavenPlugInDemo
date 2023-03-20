@@ -6,18 +6,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hcl</groupId>
-	<artifactId>pls_work_agh</artifactId>
+	<artifactId>pluginExample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>pls_work_agh</name>
+	<name>pluginExample</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -26,10 +20,15 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.12.178</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 				defaults (may be moved to parent pom) -->
 			<plugins>
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -77,24 +76,27 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>animal-sniffer-maven-plugin</artifactId>
-					<version>1.16</version>
-					<configuration>
-						<signature>
-							<groupId>org.codehaus.mojo.signature</groupId>
-							<artifactId>java18</artifactId>
-							<version>1.0</version>
-						</signature>
-						<javaHome>C:\Program Files\Java\jdk-11.0.13</javaHome>
-						<skipIfNoJavaHome>true</skipIfNoJavaHome>
-					</configuration>
+					<groupId>org.owasp</groupId>
+					<artifactId>dependency-check-maven</artifactId>
+					<version>8.1.2</version>
 					<executions>
 						<execution>
-							<id>animal-sniffer</id>
-							<phase>verify</phase>
 							<goals>
 								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>4.2.3</version>
+					<executions>
+						<execution>
+							<id>spotbugs</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>spotbugs</goal>
 							</goals>
 						</execution>
 					</executions>
