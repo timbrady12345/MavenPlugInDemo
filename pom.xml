@@ -101,6 +101,17 @@
 						</execution>
 					</executions>
 				</plugin>
+				<plugin>
+					<groupId>com.gavinmogan</groupId>
+					<artifactId>precommit-maven-plugin</artifactId>
+					<version>1.2.0</version>
+					<configuration>
+						<tasks>
+							<task>check-sql-injection</task>
+							<task>xss-code</task>
+						</tasks>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

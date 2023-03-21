@@ -8,3 +8,17 @@ repos:
     -   id: trailing-whitespace
     -   id: double-quote-string-fixer
     -   id: no-commit-to-branch
+-   repo: https://github.com/owasp/lhf.git
+    rev: v1.0.1
+    hooks:
+    -   id: check-sql-injection
+        name: Check SQL Injection
+        entry: bin/sqlcheck
+        language: java
+-   repo: https://github.com/gherynos/pre-commit-java
+    hooks:
+    -   id: pmd
+    -   id: cpd
+-   repo: https://github.com/jlebar/pre-commit-hooks
+    hooks:
+    -   id: do-not-submit

@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        String str = "adding anything again";
+        String str = "DO NOT SUBMIT";
         ArrayList<Integer> nums = new ArrayList<Integer>();
         nums.add(5);
     }
